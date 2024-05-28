@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { application_config } from "../../services/application_config";
-import { Typography } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 
 function Forms() {
   useEffect(() => {
@@ -13,9 +13,11 @@ function Forms() {
   }, []);
 
   return (
-    <Typography variant="h3" component="div">
-      Forms
-    </Typography>
+    <Container>
+      <Typography variant="h3" component="div">
+        Forms
+      </Typography>
+    </Container>
   );
 }
 

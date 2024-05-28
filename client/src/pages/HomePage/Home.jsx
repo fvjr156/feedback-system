@@ -10,10 +10,10 @@ function Home() {
 
   return (
     <Container>
-      <Typography variant="h3" gutterBottom>
+      <Typography variant="h3" component="div">
         Home Page
       </Typography>
-      <Typography variant="body1">Hello World!</Typography>
+      <Typography variant="body1"></Typography>
     </Container>
   );
 }
