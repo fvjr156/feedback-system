@@ -5,7 +5,7 @@ export const DB_TestConnection = async () => {
     await MyDatabase.authenticate();
     console.log("[db] Database is working.");
   } catch (error) {
-    console, error("[error] Can't connect to the database.");
+    console.error("[error] Can't connect to the database.");
   }
 };
 

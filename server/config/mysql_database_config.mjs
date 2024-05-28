@@ -8,3 +8,5 @@ export const MyDatabase = new Sequelize("db_feedbacksystem", "user_dbadmin", "12
     timestamps: false,
   },
 });
+
+
