@@ -41,7 +41,7 @@ function AppToolbar() {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1}}
+            sx={{ flexGrow: 1, fontWeight: 800, fontSize: 26}}
           >
             {application_config.application_longname}
           </Typography>
