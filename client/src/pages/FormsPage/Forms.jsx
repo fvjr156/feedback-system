@@ -20,13 +20,13 @@ function Forms() {
           <Container sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
             <Typography component="div" sx={{ marginRight: 12, fontWeight: 700, fontSize: 30 }}>
               Total no. of Forms:
-              <Typography component="div" sx={{ fontSize:28 }}>
-                0
+              <Typography component="div" sx={{ fontSize:28, marginLeft: 2 }}>
+                1
               </Typography>
             </Typography>
             <Typography component="div" sx={{ fontWeight: 700, fontSize: 30 }}>
               Total no. of Responses:
-              <Typography component="div" sx={{ fontSize:28 }}>
+              <Typography component="div" sx={{ fontSize:28, marginLeft: 2 }}>
                 0
               </Typography>
             </Typography>

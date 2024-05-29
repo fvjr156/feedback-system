@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { Container, Typography } from "@mui/material";
+import { Log } from "../../helpers/loghelpers";
 
 function NotFound() {
   useEffect(() => {
     document.title = `Not Found`;
-    console.log('[%cDebug%c] This page doesn\'t exist', 'color: red; font-weight: bold;', 'color: black;');
+    Log.error("This page doesn\'t exist");
   }, []);
 
   return (
