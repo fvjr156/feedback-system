@@ -15,6 +15,7 @@ import Forms from "./pages/FormsPage/Forms";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
+      <WarningMessage/>
       <CssBaseline />
       <BrowserRouter>
       <AppToolbar/>
@@ -26,6 +27,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
-    <WarningMessage/>
   </React.StrictMode>
 );
