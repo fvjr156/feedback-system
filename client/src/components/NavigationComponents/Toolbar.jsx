@@ -20,7 +20,7 @@ function AppToolbar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ borderRadius: 7 }} elevation={0}>
+      <AppBar position="static" sx={{ padding: 1 }} elevation={0}>
         <Toolbar sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
           <IconButton
             size="large"
