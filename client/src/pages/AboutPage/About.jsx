@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { application_config } from "../../services/application_config";
 import { Log } from "../../helpers/loghelpers";
 
@@ -10,13 +10,15 @@ function About() {
   }, []);
 
   return (
-    <Container>
-      <Typography variant="h3" gutterBottom>
-        About
+    <Container sx={{ backgroundColor: '#BAB9AF', borderRadius: 3, marginTop: 1, height: 650, minWidth: 1420, padding: 2}}>
+      <Typography variant="h3" gutterBottom sx={{fontSize: 26}}>
+        Automated Response Collection and Monitoring System with Microsoft Forms and <br/> Power Automate Integration <br/> Codename: ArciFs
       </Typography>
-      <Typography variant="body1">
-        
+      <Box sx={{backgroundColor: 'white', width: 180, height: 45, borderRadius: 1, textAlign: 'center'}}>
+      <Typography variant="body1" sx={{marginTop: 55}}>
+         <a href="https://github.com/Promatues/feedback-system.git"> Github Repository</a>
       </Typography>
+      </Box>
     </Container>
   );
 }
