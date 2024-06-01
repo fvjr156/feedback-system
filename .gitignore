@@ -1,0 +1,3 @@
+server/node_modules
+client/node_modules
+files/rust-project/target
