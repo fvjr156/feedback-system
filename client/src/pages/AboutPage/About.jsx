@@ -6,22 +6,9 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import ReactMarkdown from "react-markdown";
 
 function About() {
-
-  const [content, setContent] = useState("");
-
   useEffect(() => {
     document.title = `${application_config.application_name} - About Page`;
     Log.debug("Navigated to About.");
-
-    fetch("/about.md")
-      .then((response) => response.text())
-      .then((text) => {
-        setContent(text);
-      })
-      .catch((error) => {
-        Log.error("Failed to fetch About content:", error);
-      });
-
   }, []);
 
   const redirectToGithubRepo = () => {
@@ -58,7 +45,7 @@ function About() {
           component="div"
           sx={{ fontWeight: 500, mt: 2, mx: 6 }}
         >
-          <ReactMarkdown>{content}</ReactMarkdown>
+          <AboutContent />
         </Typography>
         <Paper
           elevation={5}
@@ -137,6 +124,41 @@ function About() {
         </Paper>
       </Paper>
     </Box>
+  );
+}
+
+function AboutContent() {
+  return (
+    <>
+      <p>
+        Created for the STI College Marikina's Senior High School Exposition
+        2024<br/>and for the Customer Satisfaction Survey for Cucina de Marquina
+      </p>
+      <br/>
+      <p>Made with &lt;3 by: </p>
+      <ul style={{ marginLeft: "3em" }}>
+        <li>
+          Villanueva, Fernando Jr. (application design, fullstack development){" "}
+        </li>
+        <li>Gutang, Glenniel (application frontend designing)</li>
+        <li>Macasilhig, Khyle Myrvin (application frontend designing)</li>
+      </ul>
+      <br />
+      <p>ARCMS (Feedback System) Research Team: </p>
+      <ul style={{ marginLeft: "3em" }}>
+        <li>Baltazar, Janine (research lead)</li>
+        <li>Alina, Ronnel Joseph</li>
+        <li>Gutang, Glenniel</li>
+        <li>Iturrios, Foilan Routhe</li>
+        <li>Macapagal, Christian Jay</li>
+        <li>San Miguel, Lance Aryton</li>
+        <li>Tomaneng, John Michael</li>
+        <li>Villanueva, Fernando Jr.</li>
+        <li>Ymata, Lance Gabriel</li>
+      </ul>
+      <br/>
+      <p>students of IT-MAWD strand of AY 2023-2024</p>
+    </>
   );
 }
 

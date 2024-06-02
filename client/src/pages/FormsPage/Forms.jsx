@@ -176,7 +176,7 @@ function ResponseLineGraph({ data }) {
   return (
       <LineChart
         width={500}
-        height={225}
+        height={200}
         data={data}
         margin={{
           top: 5,
