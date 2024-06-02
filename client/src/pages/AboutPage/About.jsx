@@ -39,7 +39,7 @@ function About() {
 
   return (
     <Box className="about-main-div" p={1}>
-      <Typography variant="h4" sx={{ mb: 3 }}>
+      <Typography variant="h4" sx={{ mb: 3, fontWeight: 600 }}>
         About {application_config.application_name}
       </Typography>
       <Paper elevation={5} sx={{ padding: 6, mx: 3, borderRadius: 5 }}>
