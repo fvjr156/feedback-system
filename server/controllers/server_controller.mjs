@@ -7,7 +7,7 @@ import {
 } from "./data_operations.mjs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { groupQuestionData } from "./helpers/groupQuestionData.mjs";
+
 
 export const GET_Survey = (req, res) => {
   const url =
