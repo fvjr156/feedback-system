@@ -51,7 +51,7 @@ function Home() {
   }
 
   return (
-    <Box className="home-main-div" p={2}>
+    <Box className="home-main-div" p={1}>
       <Typography variant="h4" gutterBottom sx={{ fontWeight: 600 }}>
         Home Page
       </Typography>
