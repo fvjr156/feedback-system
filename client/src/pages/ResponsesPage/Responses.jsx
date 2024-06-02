@@ -21,6 +21,7 @@ import {
   Typography,
 } from "@mui/material";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
+import { VisualizeAnswerData } from "./ResponsePageRenderCharts";
 
 function Responses() {
   const location = useLocation();
@@ -28,6 +29,7 @@ function Responses() {
   const [loading, setLoading] = useState(true);
   const [locationCheck, setLocationCheck] = useState(true);
   const [responses, setResponses] = useState(null);
+  const [responseData, setResponseData] = useState(null);
   const [open, setOpen] = useState({});
 
   useEffect(() => {
@@ -50,6 +52,16 @@ function Responses() {
         const response = await api_operations.getResponseByID(
           location.state.msforms_form_id
         );
+        const response_data = await api_operations.getStats.response(
+          location.state.msforms_form_id
+        );
+
+        const dataKey = Object.keys(response_data.data)[0];
+        const sortedResponseData = response_data.data[dataKey].sort(
+          (a, b) => a.order - b.order
+        );
+
+        setResponseData(sortedResponseData);
         setResponses(response.data);
         setLoading(false);
         Log.success("Response data fetched.");
@@ -84,14 +96,16 @@ function Responses() {
 
   return (
     <div className="responses-main-div">
-      <Box sx={{ p: 5 }}>
-        <Typography variant="h4" gutterBottom sx={{ fontWeight: 600 }}>{location.state.form_name}</Typography>
-        <Typography variant="body1">
+      <Box sx={{ p: 4 }}>
+        <Typography variant="h4" gutterBottom sx={{ fontWeight: 600 }}>
+          {location.state.form_name}
+        </Typography>
+        <Typography variant="h6">
           Click on a response's dropdown button to reveal responses to each form
           question.
         </Typography>
       </Box>
-      <Box sx={{ m: 2 }}>
+      <Box sx={{ m: 2, mt: 1 }}>
         <Typography variant="h6" component="div" sx={{ mx: 4 }}>
           Tabulated Responses
         </Typography>
@@ -214,6 +228,26 @@ function Responses() {
         <Typography variant="h6" component="div" sx={{ mx: 4 }}>
           Response Data Analysis
         </Typography>
+        <Box sx={{ m: 3 }}>
+          {responseData.map((question) => (
+            <Paper
+              key={question.order}
+              sx={{
+                m: 2,
+                p: 3,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: 5
+              }}
+            >
+              <div>
+                <Typography variant="h6">{question.question}</Typography>
+                <VisualizeAnswerData data={question} />
+              </div>
+            </Paper>
+          ))}
+        </Box>
       </Box>
     </div>
   );

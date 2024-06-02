@@ -54,7 +54,7 @@ export const DB_AddSubmittedForm = async (form_responses) => {
       existing_formresponse.response_data = questionData;
       await existing_formresponse.save();
       console.log(
-        `[info] Form response already exists in the database.\nForm Name: ${form_name}\nResponse ID: ${response_id}`
+        `[info] Form response already exists in the database.\nForm Name: ${form_name}\nResponse ID: ${responseId}`
       );
     }
 

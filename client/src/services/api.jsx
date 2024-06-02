@@ -72,8 +72,17 @@ export const api_operations = {
         return stats;
       } catch (error) {
         console.error("[error] Failed to get stats.", error.message);
+        return;
       }
     },
-    response: async function () {},
+    response: async function (id) {
+      try {
+        const response_data = await axios.get(`${api_url}/stats/response?id=${id}`);
+        return response_data;
+      } catch (error) {
+        console.error("[error] Failed to get stats.", error.message);
+        return;
+      }
+    },
   },
 };
