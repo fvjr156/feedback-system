@@ -28,7 +28,7 @@ function About() {
     window.open("https://github.com/fvjr156/feedback-system.git", "_blank");
   };
   const redirectToMSFormsLink = () => {
-    window.open("https://shiner-genuine-fawn.ngrok-free.app/survey", "_blank");
+    window.open("https://server.arcifs.versatily.website/survey", "_blank");
   };
   const redirectToPAFlowLink = () => {
     window.open(
