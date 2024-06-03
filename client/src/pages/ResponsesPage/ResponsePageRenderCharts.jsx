@@ -87,7 +87,11 @@ function VerticalBarChart({ data }) {
   }));
   return (
     <ResponsiveContainer width="90%" height={200}>
-      <BarChart data={chartData} layout="horizontal" margin={{ top: 20, right: 20, left: 20, bottom: 5 }}>
+      <BarChart
+        data={chartData}
+        layout="horizontal"
+        margin={{ top: 20, right: 20, left: 20, bottom: 5 }}
+      >
         <CartesianGrid strokeDasharray="3 3" />
         <YAxis type="number" />
         <XAxis dataKey="name" type="category" />
@@ -105,7 +109,11 @@ function HorizontalBarChart({ data }) {
   }));
   return (
     <ResponsiveContainer width="90%" height={300}>
-      <BarChart data={chartData} layout="vertical" margin={{ top: 20, right: 20, left: 50, bottom: 5 }}>
+      <BarChart
+        data={chartData}
+        layout="vertical"
+        margin={{ top: 20, right: 20, left: 50, bottom: 5 }}
+      >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis type="number" />
         <YAxis dataKey="name" type="category" />
@@ -122,7 +130,7 @@ function AnswerList({ answers }) {
       <Typography variant="h6" gutterBottom>
         Short Answers
       </Typography>
-      <Paper elevation={3} sx={{ height: "10em",p: 2, overflowY: "scroll" }}>
+      <Paper elevation={3} sx={{ height: "10em", p: 2 }}>
         <List>
           {answers.map((answer, index) => (
             <ListItem key={index}>

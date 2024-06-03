@@ -68,15 +68,16 @@ function Forms() {
         setDailyResponses(rechartsData);
 
         setLoading(false);
-        Log.success("Forms retrieved successfully.");
+        // Log.success("Forms retrieved successfully.");
       } catch (error) {
         console.error("Error fetching forms:", error);
         setError(error);
         setLoading(false);
       }
     };
-
-    fetchData();
+    setInterval(() => {
+      fetchData();
+    }, 5000);
   }, []);
 
   if (loading) {
@@ -95,7 +96,7 @@ function Forms() {
       <Typography variant="h6" component="div">
         Click on the form name to check the form's responses.
       </Typography>
-      <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2 }}>
+      <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2, mt: 2 }}>
         <Box
           sx={{ backgroundColor: theme.palette.secondary.light, flex: 2, p: 2 }}
           className="forms-stat-box-1"

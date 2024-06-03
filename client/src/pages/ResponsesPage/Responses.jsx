@@ -253,13 +253,4 @@ function Responses() {
   );
 }
 
-/*
-
-    function renderFormQuestions(question) {
-        get questiontype
-        render type
-    }
-
- */
-
 export default Responses;

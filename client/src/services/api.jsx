@@ -56,7 +56,7 @@ export const api_operations = {
   testConnection: async function () {
     try {
       await axios.get(`${api_url}`);
-      Log.success("Server is up.");
+      // Log.success("Server is up.");
     } catch (error) {
       Log.error("Server is down.");
       throw error
