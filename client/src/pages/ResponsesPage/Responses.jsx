@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Loading from "../../components/TextBased/Loading";
-import { useTheme } from "@emotion/react";
 import { Log } from "../../helpers/loghelpers";
 import { api_operations } from "../../services/api";
 import "../../styles/page_styles.css";
@@ -9,6 +8,7 @@ import ErrorMessage from "../../components/TextBased/ErrorMessage";
 import { application_config } from "../../services/application_config";
 import {
   Box,
+  Button,
   Collapse,
   IconButton,
   Paper,
@@ -22,6 +22,7 @@ import {
 } from "@mui/material";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
 import { VisualizeAnswerData } from "./ResponsePageRenderCharts";
+import { convertToCSV, downloadCSV } from "../../helpers/csvopers";
 
 function Responses() {
   const location = useLocation();
@@ -70,6 +71,26 @@ function Responses() {
 
   const handleToggle = (id) => {
     setOpen((prevOpen) => ({ ...prevOpen, [id]: !prevOpen[id] }));
+  };
+
+  const handleDownloadCSV = () => {
+    const data = responses.map(response => {
+      const formattedData = {
+        "Response ID": response.msforms_response_id,
+        "Timestamp": response.submit_timestamp,
+        "Respondent Email": response.respondent_email,
+        ...Object.fromEntries(
+          Object.entries(response.response_data).map(([key, value]) => [
+            value.question,
+            value.answer
+          ])
+        )
+      };
+      return formattedData;
+    });
+
+    const csv = convertToCSV(data);
+    downloadCSV(csv, `${location.state.form_name}_responses.csv`);
   };
 
   if (!locationCheck) {
@@ -195,9 +216,10 @@ function Responses() {
                               </TableRow>
                             </TableHead>
                             <TableBody>
-                              {Object.entries(response.response_data).map(
-                                ([key, value]) => (
-                                  <TableRow key={key}>
+                              {Object.entries(response.response_data)
+                                .sort(([, a], [, b]) => a.order - b.order)
+                                .map(([key, value]) => (
+                                  <TableRow key={value.order}>
                                     <TableCell align="left">
                                       {value.question}
                                     </TableCell>
@@ -205,8 +227,7 @@ function Responses() {
                                       {value.answer}
                                     </TableCell>
                                   </TableRow>
-                                )
-                              )}
+                                ))}
                             </TableBody>
                           </Table>
                         </Box>
@@ -243,6 +264,11 @@ function Responses() {
             </Paper>
           ))}
         </Box>
+      </Box>
+      <Box sx={{ m: 3, p: 1 }}>
+        <Button variant="contained" color="primary" onClick={handleDownloadCSV}>
+          Download CSV
+        </Button>
       </Box>
     </div>
   );

@@ -130,7 +130,7 @@ function AnswerList({ answers }) {
       <Typography variant="h6" gutterBottom>
         Short Answers
       </Typography>
-      <Paper elevation={3} sx={{ height: "10em", p: 2 }}>
+      <Paper elevation={3} sx={{ height: "10em", p: 2, overflowY: "auto" }}>
         <List>
           {answers.map((answer, index) => (
             <ListItem key={index}>
