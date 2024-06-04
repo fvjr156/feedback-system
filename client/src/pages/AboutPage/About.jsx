@@ -122,6 +122,9 @@ function About() {
           </Typography>
           <OpenInNewIcon />
         </Paper>
+        <Typography variant="body2" sx={{mt: 5}}>
+          ArciFS v1.2 (240604)
+        </Typography>
       </Paper>
     </Box>
   );
