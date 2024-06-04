@@ -51,9 +51,9 @@ function Home() {
   }
 
   return (
-    <Box className="home-main-div" p={2}>
-      <Typography variant="h4" gutterBottom sx={{ fontWeight: 600 }}>
-        Home Page
+    <Box className="home-main-div" p={1}>
+      <Typography variant="h4" sx={{ fontWeight: 600 }}>
+        Welcome to ArciFS
       </Typography>
       <Grid container spacing={3} mt={2}>
         <Grid item xs={12} md={6}>

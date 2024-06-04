@@ -21,5 +21,5 @@ app.use((err, req, res, next) => {
 
 app.listen(port, () => {
   DB_TestConnection();
-  console.log(`[server] Currently running on http://localhost:${port}`);
+  console.log(`[server] Currently up and running.`);
 });

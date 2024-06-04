@@ -2,10 +2,7 @@ import axios from "axios";
 import { Log } from "../helpers/loghelpers";
 import { ErrorBar } from "recharts";
 
-const backend = "http://shiner-genuine-fawn.ngrok-free.app";
-const local_backend = "http://localhost:3000";
-
-const api_url = local_backend;
+const api_url = "https://server.arcifs.versatily.website";
 
 export const api_operations = {
   getForms: async function () {
@@ -59,7 +56,7 @@ export const api_operations = {
   testConnection: async function () {
     try {
       await axios.get(`${api_url}`);
-      Log.success("Server is up.");
+      // Log.success("Server is up.");
     } catch (error) {
       Log.error("Server is down.");
       throw error

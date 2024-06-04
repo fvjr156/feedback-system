@@ -56,12 +56,7 @@ function Responses() {
           location.state.msforms_form_id
         );
 
-        const dataKey = Object.keys(response_data.data)[0];
-        const sortedResponseData = response_data.data[dataKey].sort(
-          (a, b) => a.order - b.order
-        );
-
-        setResponseData(sortedResponseData);
+        setResponseData(response_data.data);
         setResponses(response.data);
         setLoading(false);
         Log.success("Response data fetched.");
@@ -229,7 +224,7 @@ function Responses() {
           Response Data Analysis
         </Typography>
         <Box sx={{ m: 3 }}>
-          {responseData.map((question) => (
+          {Object.values(responseData)[0].map((question) => (
             <Paper
               key={question.order}
               sx={{
@@ -238,7 +233,7 @@ function Responses() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                borderRadius: 5
+                borderRadius: 5,
               }}
             >
               <div>
@@ -252,14 +247,5 @@ function Responses() {
     </div>
   );
 }
-
-/*
-
-    function renderFormQuestions(question) {
-        get questiontype
-        render type
-    }
-
- */
 
 export default Responses;

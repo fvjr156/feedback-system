@@ -45,7 +45,7 @@ const form_responses_answers = async function (formId) {
         groupedForms[formId][key] = {
           question: value.question,
           question_type: value.question_type,
-          order: parseInt(value.order[key]),
+          order: value.order,
           answers: [],
         };
       }

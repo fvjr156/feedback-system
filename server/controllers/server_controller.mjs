@@ -18,7 +18,7 @@ export const GET_Survey = (req, res) => {
 export const GET_Test = (req, res) => {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = path.dirname(__filename);
-  res.sendFile(path.join(__dirname, "..","test.html"));
+  res.status(200).sendFile(path.join(__dirname, "..","test.html"));
 };
 
 export const GET_Forms = async (req, res) => {

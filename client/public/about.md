@@ -1,10 +1,16 @@
-Deserunt excepteur velit excepteur enim aute magna officia anim qui sit incididunt in. Consectetur pariatur pariatur irure voluptate esse fugiat adipisicing aliquip non. Voluptate eiusmod cillum do esse mollit ut dolore ex et. Reprehenderit laboris labore reprehenderit ea adipisicing magna incididunt aute. Consequat labore ut consectetur dolore nisi veniam Lorem. Id laborum culpa deserunt minim.
+Created for the STI College Marikina's Senior High School Exposition 2024
 
+- Created with <3 by:
+    - Fernando, Jr. Villanueva (lead developer, lead design)
+    - Glenniel Gutang (application frontend design)
+    - Khyle Myrvin Macasilhig (application frontend design)
 
-- Laborum velit culpa pariatur do labore esse ut Lorem eu fugiat.
-
-    - Duis velit consectetur laborum incididunt magna enim.
-
-    - Et Lorem enim mollit anim elit occaecat.
-
-    - Sint voluptate nulla laborum reprehenderit adipisicing non occaecat id cupidatat excepteur.
+- ArciFS Research Team:
+    - Janine Baltazar (research lead)
+    - Foilan Iturrios
+    - Christian Jay Macapagal
+    - Glenniel Gutang
+    - John Michael Tomaneng
+    - Lance Aryton San Miguel
+    - Ronnel Joseph Alina
+    - Lance Gabriel Ymata
