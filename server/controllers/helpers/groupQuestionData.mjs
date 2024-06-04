@@ -18,7 +18,7 @@ export const groupQuestionData = (data) => {
         question: question,
         question_type: questionTypesObject[key],
         answer: answersObject[key],
-        order: orderObject
+        order: orderObject[key],
       };
     }
   
