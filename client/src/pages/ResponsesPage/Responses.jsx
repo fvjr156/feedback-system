@@ -56,12 +56,12 @@ function Responses() {
           location.state.msforms_form_id
         );
 
-        const dataKey = Object.keys(response_data.data)[0];
-        const sortedResponseData = response_data.data[dataKey].sort(
-          (a, b) => a.order - b.order
-        );
+        // const dataKey = Object.keys(response_data.data)[0];
+        // const sortedResponseData = response_data.data[dataKey].sort(
+        //   (a, b) => a.order - b.order
+        // );
 
-        setResponseData(sortedResponseData);
+        setResponseData(response_data);
         setResponses(response.data);
         setLoading(false);
         Log.success("Response data fetched.");
