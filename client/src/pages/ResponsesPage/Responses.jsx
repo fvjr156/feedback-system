@@ -56,11 +56,13 @@ function Responses() {
           location.state.msforms_form_id
         );
 
+        Log.debug(JSON.stringify(response_data.data))
+
         const sortedResponseData = response_data.data.sort(
           (a, b) => a.order - b.order
         );  
 
-        setResponseData(response_data);
+        setResponseData(sortedResponseData);
         setResponses(response.data);
         setLoading(false);
         Log.success("Response data fetched.");
