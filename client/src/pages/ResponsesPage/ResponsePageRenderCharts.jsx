@@ -21,7 +21,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#A020F0", "#FF69B4", "#00BFFF", "#FFD700", "#32CD32", "#FF4500"];
 
 function DonutChart({ data }) {
   const chartData = Object.entries(data).map(([key, value]) => ({
@@ -35,7 +35,7 @@ function DonutChart({ data }) {
           data={chartData}
           cx="50%"
           cy="50%"
-          innerRadius={65}
+          innerRadius={60}
           outerRadius={80}
           fill="#8884d8"
           paddingAngle={5}
