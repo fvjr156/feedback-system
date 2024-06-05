@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 import Loading from "../../components/TextBased/Loading";
 import { Log } from "../../helpers/loghelpers";
 import { api_operations } from "../../services/api";
-import "../../styles/page_styles.css";
 import ErrorMessage from "../../components/TextBased/ErrorMessage";
 import { application_config } from "../../services/application_config";
 import {
@@ -23,6 +22,7 @@ import {
 import { KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
 import { VisualizeAnswerData } from "./ResponsePageRenderCharts";
 import { convertToCSV, downloadCSV } from "../../helpers/csvopers";
+import "../../styles/page_styles.css";
 
 function Responses() {
   const location = useLocation();
@@ -74,17 +74,17 @@ function Responses() {
   };
 
   const handleDownloadCSV = () => {
-    const data = responses.map(response => {
+    const data = responses.map((response) => {
       const formattedData = {
         "Response ID": response.msforms_response_id,
-        "Timestamp": response.submit_timestamp,
+        Timestamp: response.submit_timestamp,
         "Respondent Email": response.respondent_email,
         ...Object.fromEntries(
           Object.entries(response.response_data).map(([key, value]) => [
             value.question,
-            value.answer
+            value.answer,
           ])
-        )
+        ),
       };
       return formattedData;
     });
@@ -122,7 +122,7 @@ function Responses() {
         </Typography>
       </Box>
       <Box sx={{ m: 2, mt: 1 }}>
-        <Typography variant="h6" component="div" sx={{ mx: 4 }}>
+        <Typography variant="h6" component="div" sx={{ mx: 3 }}>
           Tabulated Responses
         </Typography>
         <TableContainer component={Paper} sx={{ borderRadius: "1em", mt: 3 }}>
@@ -158,7 +158,7 @@ function Responses() {
                 <React.Fragment key={response.id}>
                   <TableRow
                     style={{
-                      backgroundColor: index % 2 === 0 ? "#ffffff" : "#f9f9f9",
+                      backgroundColor: index % 2 === 0 ? "#ffffff" : "#f0f0f0",
                     }}
                   >
                     <TableCell align="center">
@@ -266,7 +266,12 @@ function Responses() {
         </Box>
       </Box>
       <Box sx={{ m: 3, p: 1 }}>
-        <Button variant="contained" color="primary" onClick={handleDownloadCSV}>
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{ borderRadius: 2 }}
+          onClick={handleDownloadCSV}
+        >
           Download CSV
         </Button>
       </Box>

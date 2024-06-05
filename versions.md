@@ -15,3 +15,9 @@
         - fixed how backend processes data from PA flow
     - Initial implementation of Export function
         - exporting response data to CSV
+
+- Patches:
+    - **v1.1.1 (240605)**
+        - Added 6 more colors for the charts
+        - Modularized CSV export code
+        - Table color

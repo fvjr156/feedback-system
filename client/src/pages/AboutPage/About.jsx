@@ -123,7 +123,7 @@ function About() {
           <OpenInNewIcon />
         </Paper>
         <Typography variant="body2" sx={{mt: 5}}>
-          ArciFS v1.1 (240604)
+          ArciFS v1.1.1 (240605)
         </Typography>
       </Paper>
     </Box>
